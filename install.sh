@@ -99,7 +99,7 @@ wget $url -P $destination_folder > /dev/null 2>&1
 ##### Z-Wave binding configuration #####
 # Udev rule installation
 udev_rule_path='/etc/udev/rules.d/50-usb-serial.rules'
-z_wave_usb_identifiers='SUBSYSTEM=="tty", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", SYMLINK+="USBzwave", GROUP="dialout", MODE="0666"\nSUBSYSTEM=="tty", ATTRS{idVendor}=="0658", ATTRS{idProduct}=="0200", SYMLINK+="USBzwave", GROUP="dialout", MODE="0666"'
+z_wave_usb_identifiers='SUBSYSTEM=="tty", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", SYMLINK+="USBzwave", GROUP="dialout", MODE="0666", RUN+="/bin/systemctl restart openhab.service"\nSUBSYSTEM=="tty", ATTRS{idVendor}=="0658", ATTRS{idProduct}=="0200", SYMLINK+="USBzwave", GROUP="dialout", MODE="0666", RUN+="/bin/systemctl restart openhab.service"'
 echo -e $z_wave_usb_identifiers > $udev_rule_path
 
 # Edit the openhab.cfg file
