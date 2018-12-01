@@ -90,7 +90,7 @@ echo -e "openHAB correctly configured\n"
 echo -e "Installing and configuring Z-Wave binding... (wait)"
 
 # Download the .jar file
-url=https://openhab.ci.cloudbees.com/job/openHAB1-Addons/lastSuccessfulBuild/artifact/bundles/binding/org.openhab.binding.zwave/target/org.openhab.binding.zwave-1.13.0-SNAPSHOT.jar
+url=https://ci.openhab.org/job/PR-openHAB1-Addons/ws/bundles/binding/org.openhab.binding.zwave/target/org.openhab.binding.zwave-1.13.0-SNAPSHOT.jar
 destination_folder='/usr/share/openhab/addons/'
 wget $url -P $destination_folder > /dev/null 2>&1
 
